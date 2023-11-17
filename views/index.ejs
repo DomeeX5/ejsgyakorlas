@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Név</th>
+                <th>Nem</th>
+                <th>Születésnap</th>
+                <th>Egyenleg</th>
+                <th>Aktív-e</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% users.forEach((user, i) => { %>
+            <tr>
+                <td><%= user.name %></td>
+                <% if (user.gender == 'férfi'){ %>
+                <td><i class="fa fa-mars"></i></td>
+                <% } else { %>
+                <td><i class="fa fa-venus"></i></td>
+                <% } %>
+                <td><%= user.bday %></td>
+                <td><%= user.balance %></td>
+                <td><%= user.activity ? 'Aktív':'Nem aktív' %></td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
